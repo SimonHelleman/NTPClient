@@ -149,7 +149,7 @@ int NTPClient::getSeconds() const {
  * Date Functions 
  */
 int NTPCLIENT::getDate() const {
-  time_t rawTime = getEpochTime();
+  time_t rawTime = this->getEpochTime();
   
   struct tm* timeStruct;
   timeStruct = localtime(&rawTime);
@@ -159,7 +159,7 @@ int NTPCLIENT::getDate() const {
 }
 
 int NTPCLIENT::getMonth() const {
-  time_t rawTime = getEpochTime();
+  time_t rawTime = this->getEpochTime();
   
   struct tm* timeStruct;
   timeStruct = localtime(&rawTime);
