@@ -3,9 +3,9 @@ Fork Of  NTPClient
 # NTPClient
 
 ## Function documentation
-`getHours(void)` returns an int containing the hour of the day (00-24)
-`getMinutes(void)` returns an int containing the minutes of the current hours (00-59)
-`getSeconds(void)` returns an int containing the seconds of the current minute (00-59)
+`getHours(void)` returns an int containing the hour of the day (00-24).
+`getMinutes(void)` returns an int containing the minutes of the current hours (00-59).
+`getSeconds(void)` returns an int containing the seconds of the current minute (00-59).
 
 `getDate(void)` returns an int containing the day of the current month - not in original library
 `getMonth(void)` returns an int containing the current month (0-12) - not in original library
