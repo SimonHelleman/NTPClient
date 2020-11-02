@@ -19,7 +19,7 @@
  * SOFTWARE.
  */
 
-#include "NTPClient.h"
+#include "SimonNTP.h"
 
 NTPClient::NTPClient(UDP& udp) {
   this->_udp            = &udp;
@@ -143,6 +143,38 @@ int NTPClient::getMinutes() const {
 }
 int NTPClient::getSeconds() const {
   return (this->getEpochTime() % 60);
+}
+
+/**
+ * Date Functions 
+ */
+int NTPCLIENT::getDate() const {
+  time_t rawTime = getEpochTime();
+  
+  struct tm* timeStruct;
+  timeStruct = localtime(&rawTime);
+  
+  return timeStruct->tm_mday;
+  
+}
+
+int NTPCLIENT::getMonth() const {
+  time_t rawTime = getEpochTime();
+  
+  struct tm* timeStruct;
+  timeStruct = localtime(&rawTime);
+  
+  return timeStruct->tm_mon + 1;
+  
+}
+
+int NTPCLIENT::getYear() const {
+  time_t rawTime = this->getEpochTime();
+
+  struct tm* timeStruct;
+  timeStruct = localtime(&rawTime);
+  
+  return timeStruct->tm_year + 1900;	
 }
 
 String NTPClient::getFormattedTime() const {

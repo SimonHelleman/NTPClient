@@ -78,6 +78,13 @@ class NTPClient {
     int getHours() const;
     int getMinutes() const;
     int getSeconds() const;
+	
+	/**
+     * Date Functions - not in original library
+     */
+	int getDate() const;
+	int getMonth() const;
+	int getYear() const;
 
     /**
      * Changes the time offset. Useful for changing timezones dynamically
